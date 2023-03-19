@@ -3,19 +3,22 @@ package ru.netology.manager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.comparator.TicketByTimeComparator;
 import ru.netology.domain.Ticket;
 import ru.netology.repository.TicketRepository;
+
+import java.util.Comparator;
 
 
 public class TicketManagerTest {
     TicketRepository repo = new TicketRepository();
     TicketManager manager = new TicketManager(repo);
     Ticket ticket1 = new Ticket(123, 43580, "SPB", "VLD", 1080);
-    Ticket ticket2 = new Ticket(456, 6750, "SPB", "MSK", 120);
+    Ticket ticket2 = new Ticket(456, 6750, "SPB", "MSK", 240);
     Ticket ticket3 = new Ticket(789, 127800, "MSK", "SDN", 1500);
-    Ticket ticket4 = new Ticket(321, 9200, "SPB", "MSK", 240);
+    Ticket ticket4 = new Ticket(321, 9200, "SPB", "MSK", 120);
     Ticket ticket5 = new Ticket(654, 61100, "MGD", "SIM", 1260);
-    Ticket ticket6 = new Ticket(987, 3500, "SPB", "MSK", 360);
+    Ticket ticket6 = new Ticket(987, 3500, "SPB", "MSK", 60);
     Ticket ticket7 = new Ticket(741, 18300, "ADL", "PER", 420);
     Ticket ticket8 = new Ticket(856, 1200, "ADL", "PER", 500);
     Ticket ticket9 = new Ticket(357, 4150, "SPB", "MSK", 300);
@@ -72,6 +75,39 @@ public class TicketManagerTest {
         repo.removeTicket(741);
         Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket8, ticket9, ticket10};
         Ticket[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void findTicketsWithComparator() {
+
+        Comparator<Ticket> comparator = new TicketByTimeComparator();
+        Ticket[] expected = {ticket6, ticket4, ticket2, ticket9, ticket10};
+        Ticket[] actual = manager.findAll("SPB", "MSK", comparator);
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void notFindAnyTicketsWithComparator() {
+
+        Comparator<Ticket> comparator = new TicketByTimeComparator();
+        Ticket[] expected = {};
+        Ticket[] actual = manager.findAll("BAG", "LON", comparator);
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void findOnlyOneTicketWithComparator() {
+
+        Comparator<Ticket> comparator = new TicketByTimeComparator();
+        Ticket[] expected = {ticket3};
+        Ticket[] actual = manager.findAll("MSK", "SDN", comparator);
 
         Assertions.assertArrayEquals(expected, actual);
 
