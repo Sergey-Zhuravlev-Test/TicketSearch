@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9c9ef3f-0318-4e7a-ab06-b4b88d6fc4cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/netology/domain/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/netology/manager/TicketManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/netology/repository/TicketRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/netology/manager/TicketManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/netology/comparator/TicketByTimeComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/manager/TicketManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/manager/TicketManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/manager/TicketManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/manager/TicketManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,7 +67,7 @@
       <command value="mvn clean verify" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TicketManagerTest.removeTicketFromList">
+  <component name="RunManager" selected="JUnit.TicketManagerTest">
     <configuration name="TicketManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TicketSearch" />
       <extension name="coverage">
@@ -90,7 +83,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TicketManagerTest.findOnlyOneTicket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TicketManagerTest.findOnlyOneTicketWithComparator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TicketSearch" />
       <extension name="coverage">
         <pattern>
@@ -100,13 +93,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.netology.manager" />
       <option name="MAIN_CLASS_NAME" value="ru.netology.manager.TicketManagerTest" />
-      <option name="METHOD_NAME" value="findOnlyOneTicket" />
+      <option name="METHOD_NAME" value="findOnlyOneTicketWithComparator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TicketManagerTest.findTicketsWithSorting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TicketManagerTest.findTicketsWithComparator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TicketSearch" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +109,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.netology.manager" />
       <option name="MAIN_CLASS_NAME" value="ru.netology.manager.TicketManagerTest" />
-      <option name="METHOD_NAME" value="findTicketsWithSorting" />
+      <option name="METHOD_NAME" value="findTicketsWithComparator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TicketManagerTest.notFindAnyTicket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TicketManagerTest.notFindAnyTicketsWithComparator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TicketSearch" />
       <extension name="coverage">
         <pattern>
@@ -132,7 +125,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.netology.manager" />
       <option name="MAIN_CLASS_NAME" value="ru.netology.manager.TicketManagerTest" />
-      <option name="METHOD_NAME" value="notFindAnyTicket" />
+      <option name="METHOD_NAME" value="notFindAnyTicketsWithComparator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TicketManagerTest.removeTicketFromList" />
         <item itemvalue="JUnit.TicketManagerTest" />
-        <item itemvalue="JUnit.TicketManagerTest.notFindAnyTicket" />
-        <item itemvalue="JUnit.TicketManagerTest.findOnlyOneTicket" />
-        <item itemvalue="JUnit.TicketManagerTest.findTicketsWithSorting" />
+        <item itemvalue="JUnit.TicketManagerTest.findOnlyOneTicketWithComparator" />
+        <item itemvalue="JUnit.TicketManagerTest.notFindAnyTicketsWithComparator" />
+        <item itemvalue="JUnit.TicketManagerTest.findTicketsWithComparator" />
+        <item itemvalue="JUnit.TicketManagerTest.removeTicketFromList" />
       </list>
     </recent_temporary>
   </component>
